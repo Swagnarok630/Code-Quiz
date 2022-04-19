@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Quizacoatl!!!</title>
+</head>
+<body>
+    <!-- Using a header to hold the items I want in the top row -->
+    <!-- Had to give an ID to all my "containers" so that I could customize their light/dark settings -->
+    <header>
+        <!-- A div to hold both score and light/dark toggle, so that I can arrange them in columns -->
+        <div class="darkcont" id="leftcorner">
+        <!-- Using span so I can separate my non-category items with space-between and they'll go to the left and right -->
+        <span class="toggle">Dark/Light Toggle</span>
+            <label class="switch">
+                <input type="checkbox" id="switchmode">
+                <span class="slider round"></span>
+            </label>
+        <button class="score">View High Scores</button>
+        </div>
+            <!-- Using nav here so I can center it in the div between the spans in the header -->
+            <nav class="darkcont">
+                <ul>
+                    <li>Code</li>
+                    <li>Marvel</li>
+                    <li>King of Fighters</li>
+                    <li>Final Fantasy</li>
+                </ul>
+            </nav>  
+        <div class="darkcont" id="rightcorner">
+            Timer </br> 
+        <span class="timer">0</span>
+        </div>
+    </header>
+
+    <section>
+        <!-- Had to set default opacity for toggle to work -->
+        <aside class="darkcont" id="left" style="opacity: 0">
+            High scores go here
+        </aside>
+
+        <main>
+            <div class="darkcont" id="difficulty">
+                <ul>
+                    <li>Easy</li>
+                    <li>Medium</li>
+                    <li>Hard</li>
+                </ul>
+            </div>
+            <div class="darkcont" id="quizbody">
+                <h1>The Legendary Quizacoatl</h1>
+                <p>Come one, come all! Test your knowledge with a quiz! When you start the quiz, you'll
+                    first select a category of choice, followed by a difficulty level. The higher the 
+                    difficulty, the less time you'll have to answer every question, but you'll get a 
+                    score multiplier at the end of the quiz!
+                </p>
+                <button id="start">Start Quiz</button>
+            </div>
+            <div class="darkcont" id="confirmy">Confirmation</div>
+        </main>
+    
+        <aside class="darkcont" id="right">
+            Misc
+        </aside>
+    </section>
+</body>
+<script src="./assets/script.js"></script>
+</html>

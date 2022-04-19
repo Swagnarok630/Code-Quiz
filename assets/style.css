@@ -1,0 +1,228 @@
+/* So that the page starts out in "dark" mode */
+body {
+    background-color: black;
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    margin: 0px 0px 80px 0px;
+}
+
+/* Flex column so that my toggle and score button are top and bottom */
+header #leftcorner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+    justify-content: space-around;
+}
+
+/* Adjusting to bold and font size to make it a little more clear */
+.toggle {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Decorating and customing button for high score toggle */
+.score {
+    background-color: rgb(243, 140, 140);
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Needed to give width so that the list elements had space around them */
+nav {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+    width: 100%;
+}
+
+li {
+   text-align: center;
+   line-height: 50px;
+   background-color: rgb(186, 252, 186);
+   color: black;
+    width: 15%;
+}
+
+header #rightcorner {
+    width: 10%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 0px 0px 0px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    justify-content: space-between;
+}
+
+section aside#left {
+    width: 15%;
+}
+
+section main {
+    width: 60%;
+
+}
+
+/* Spacing out major content on page */
+#difficulty {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px 50px 0px;
+}
+
+#quizbody {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px 50px 0px;
+    align-items: center;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+#start {
+    background-color: rgb(128, 164, 255);
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    width: 200px;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#confirmy {
+    margin: 50px 0px 20px 0px;
+}
+
+section aside#right{
+    width: 15%;
+}
+
+/* Dark Mode */
+.dark {
+    background-color: black;
+    color: white;
+  }
+
+.darkcont {
+    background-color:#191918;
+    color: #D6F2F5;
+    border: solid 3px #f1d2ff;
+  }
+
+/* Light Mode */
+.light {
+    background-color: white;
+    color: black;
+  }
+
+.lightcont {
+    background-color: #f5dfb3;
+    color: black;
+    border: solid 3px rgb(46, 47, 67)
+  }
+
+/* Styling the Switch button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+input:checked + .slider {
+    background-color: rgb(29, 128, 210);
+  }
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px rgb(29, 128, 210);
+  }
+  
+/* This moves the slider object to the right, and back when pressed again */
+input:checked + .slider:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
+  }
+  
+/* This makes the background that holds the slider rounded at the edges */
+.slider.round {
+    border-radius: 20px;
+  }
+  
+/* This makes the slider item a circle instead of a square */
+.slider.round:before {
+    border-radius: 50%;
+  }
+  
+  /* .row {
+    margin: 20px;
+    display: flex;
+  } */
+  /* .col {
+    margin: 20px;
+  } */
