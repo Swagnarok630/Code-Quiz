@@ -1,3 +1,7 @@
+* {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
 /* So that the page starts out in "dark" mode */
 body {
     background-color: black;
@@ -54,14 +58,21 @@ ul {
     list-style-type: none;
     justify-content: space-around;
     width: 100%;
+    padding: 0px;
 }
 
-li {
-   text-align: center;
-   line-height: 50px;
-   background-color: rgb(186, 252, 186);
-   color: black;
-    width: 15%;
+.buttons {
+    background-color: rgb(186, 252, 186);
+    border: solid 3px rgb(5, 105, 5);
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    width: 175px;
+    cursor: pointer;
 }
 
 header #rightcorner {
@@ -93,13 +104,15 @@ section main {
 #difficulty {
     display: flex;
     flex-direction: row;
-    margin: 20px 0px 50px 0px;
+    margin: 20px 0px 20px 0px;
+    padding: 0px;
 }
 
-#quizbody {
+#beginning {
     display: flex;
     flex-direction: column;
     margin: 50px 0px 50px 0px;
+    padding-bottom: 30px;
     align-items: center;
 }
 
@@ -108,7 +121,7 @@ h1 {
     text-align: center;
 }
 
-#start {
+.start {
     background-color: rgb(128, 164, 255);
     border: none;
     color: black;
@@ -153,6 +166,10 @@ section aside#right{
     color: black;
     border: solid 3px rgb(46, 47, 67)
   }
+
+  .hide {
+    display: none;
+}
 
 /* Styling the Switch button */
 .switch {

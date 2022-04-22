@@ -16,23 +16,25 @@
         <!-- Using span so I can separate my non-category items with space-between and they'll go to the left and right -->
         <span class="toggle">Dark/Light Toggle</span>
             <label class="switch">
+                <!-- Using a checkbox type and then adjusting it to a slider toggle, seen in an older activity -->
                 <input type="checkbox" id="switchmode">
                 <span class="slider round"></span>
             </label>
+            <!-- Creating buttong to toggle dynamic high score display -->
         <button class="score">View High Scores</button>
         </div>
             <!-- Using nav here so I can center it in the div between the spans in the header -->
-            <nav class="darkcont">
+            <nav class="darkcont hide">
                 <ul>
-                    <li>Code</li>
-                    <li>Marvel</li>
-                    <li>King of Fighters</li>
-                    <li>Final Fantasy</li>
+                    <li><button class="buttons" id="code">Code</button></li>
+                    <li><button class="buttons" id="marvel">Marvel</button></li>
+                    <li><button class="buttons" id="kof">King of Fighters</button></li>
+                    <li><button class="buttons" id="ff">Final Fantasy</button></li>
                 </ul>
             </nav>  
         <div class="darkcont" id="rightcorner">
             Timer </br> 
-        <span class="timer">0</span>
+        <span id="timer">0</span>
         </div>
     </header>
 
@@ -43,23 +45,36 @@
         </aside>
 
         <main>
-            <div class="darkcont" id="difficulty">
-                <ul>
-                    <li>Easy</li>
-                    <li>Medium</li>
-                    <li>Hard</li>
+            <div class="darkcont hide" id="diffbox">
+                <ul id="difficulty">
+                    <li><button class="buttons" id="easy">Easy</button></li>
+                    <li><button class="buttons" id="medium">Medium</button></li>
+                    <li><button class="buttons" id="hard">Hard</button></li>
                 </ul>
             </div>
-            <div class="darkcont" id="quizbody">
-                <h1>The Legendary Quizacoatl</h1>
-                <p>Come one, come all! Test your knowledge with a quiz! When you start the quiz, you'll
-                    first select a category of choice, followed by a difficulty level. The higher the 
-                    difficulty, the less time you'll have to answer every question, but you'll get a 
-                    score multiplier at the end of the quiz!
-                </p>
-                <button id="start">Start Quiz</button>
+            <div>
+                <!-- The card that starts it all. Will be cycling through different cards as user progesses through quiz -->
+                <div id="startcard">
+                    <div class="darkcont" id="beginning">
+                    <h1>The Legendary Quizacoatl</h1>
+                    <p>Come one, come all! Test your knowledge with a quiz! When you start the quiz, you'll
+                        first select a category of choice, followed by a difficulty level. The higher the 
+                        difficulty, the less time you'll have to answer every question, but you'll get a 
+                        score multiplier at the end of the quiz!
+                    </p>
+                    <button class="start" id="catselect">Select Category</button>
+                    <button class="start hide" id="difselect">Select Difficulty</button>
+                    <button class="start hide" id="quizstart">Start Quiz</button>
+                    </div>
+                </div>
+                <div class="darkcont hide" id="questions">
+
+                </div>
+                <div class="darkcont hide" id="results">
+
+                </div>
             </div>
-            <div class="darkcont" id="confirmy">Confirmation</div>
+            <div class="darkcont hide" id="confirmy">Confirmation</div>
         </main>
         
         <!-- Need this hidden so that it only appears on certain questions -->
