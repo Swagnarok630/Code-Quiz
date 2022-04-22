@@ -157,42 +157,33 @@ function spiciness() {
   startbutton.remove("hide");
 }
 
+// Function for determining total time per questions
+function timemultiplier() {
+  if (spicelevel == "easy") {
+   secmult = 3;
+  }
+  else if (spicelevel == "medium") {
+    secmult = 2;
+  }
+  else if (spicelevel == "hard") {
+    secmult = 1;
+  }
+  else {
+    return
+  }
+ }
+
+// Variables for time
+var time = 0;
+var secmult = 0;
+var countdown = document.getElementById("timer");
+var timer;
+
 
 function startquiz() {
   // Hiding start of quiz card
   var startscreen = document.querySelector("#startcard").classList;
   startscreen.add("hide");
-
-  // Selecting theme of quiz
-  loadquestions();
-}
-
-// Function for determining total time per questions
-function timemultiplier() {
-
- if (spicelevel == "easy") {
-  secmult = 3;
- }
- else if (spicelevel == "medium") {
-   secmult = 2;
- }
- else if (spicelevel == "hard") {
-   secmult = 1;
- }
- else {
-   return
- }
-}
-
-// Variables for time
-var time = 20;
-var secmult = 0;
-var countdown = document.getElementById("timer");
-var timer;
-
-function loadquestions() {
-  theme();
-
 
   // Starting timer
   timemultiplier();
@@ -200,8 +191,171 @@ function loadquestions() {
   timer = setInterval(clock, 1000);
   countdown.textContent = time;
 
-
+  prepareset();
+  loadquestions();
 }
+
+var currentquiz = [];
+// Function to prepare a set of 10 questions at random from the selected category
+function prepareset() {
+  if (category == "code") {
+    // Needed an empty array to concat to so that the original array of objects is not mutated
+    let temp = [];
+    var tempqs = temp.concat(codeQs);
+    // Loop to randomly select questions and put them into current quiz. Removing from temporary array to prevent repeat questions
+    for (i = 0; i < 2; i++) {
+      let randomq = Math.floor(Math.random() * (3 - i));
+      let quizq = tempqs.slice(randomq, randomq + 1)
+      currentquiz.push(quizq)
+      tempqs.splice(randomq, 1);
+    }
+  }
+  else if (category == "marvel") {
+    // Needed an empty array to concat to so that the original array of objects is not mutated
+    let temp = [];
+    var tempqs = temp.concat(marvelQs);
+    // Loop to randomly select questions and put them into current quiz. Removing from temporary array to prevent repeat questions
+    for (i = 0; i < 2; i++) {
+      let randomq = Math.floor(Math.random() * (3 - i));
+      let quizq = tempqs.slice(randomq, randomq + 1)
+      currentquiz.push(quizq)
+      tempqs.splice(randomq, 1);
+    }
+  }
+  else if (category == "kof") {
+    // Needed an empty array to concat to so that the original array of objects is not mutated
+    let temp = [];
+    var tempqs = temp.concat(kofQs);
+    // Loop to randomly select questions and put them into current quiz. Removing from temporary array to prevent repeat questions
+    for (i = 0; i < 2; i++) {
+      let randomq = Math.floor(Math.random() * (3 - i));
+      let quizq = tempqs.slice(randomq, randomq + 1)
+      currentquiz.push(quizq)
+      tempqs.splice(randomq, 1);
+    }
+  }
+  else if (category == "ff") {
+    // Needed an empty array to concat to so that the original array of objects is not mutated
+    let temp = [];
+    var tempqs = temp.concat(ffQs);
+    // Loop to randomly select questions and put them into current quiz. Removing from temporary array to prevent repeat questions
+    for (i = 0; i < 2; i++) {
+      let randomq = Math.floor(Math.random() * (3 - i));
+      let quizq = tempqs.slice(randomq, randomq + 1)
+      currentquiz.push(quizq)
+      tempqs.splice(randomq, 1);
+    }
+  }
+  else {
+    return
+  }
+}
+
+// Function to load up questions from prepared set of questions
+var currentindex = 0;
+var currentq = currentquiz[currentindex];
+var choices = document.getElementById("answers");
+
+function loadquestions() {
+  questions.remove("hide")
+  var currentq = currentquiz[currentindex];
+ // Adding questions to the card on the HTML
+ var title = document.getElementById("questiontitle");
+ console.log(currentq)
+ title.innerHTML = currentq[0].question;
+// Clearing previous choices
+choices.innerHTML = "";
+
+currentq[0].options.forEach(function(option, i){
+  var optionbox = document.createElement("input");
+  optionbox.type = "checkbox";
+  optionbox.id = currentq[0].options[i];
+  optionbox.name = i;
+  optionbox.value = i;
+
+  var optionboxlabel = document.createElement("label");
+  optionboxlabel.htmlFor = currentq[0].options[i];
+  optionboxlabel.appendChild(document.createTextNode(currentq[0].options[i]));
+
+  var br = document.createElement("br");
+
+  choices.appendChild(optionbox);
+  choices.appendChild(optionboxlabel);
+  choices.appendChild(br);
+})
+answerclick();
+}
+
+function answerclick() {
+  var currentq = currentquiz[currentindex];
+  console.log(currentq)
+  if (document.getElementById(currentq[0].answer).checked) {
+    confirmy.textContent = "CORRECT!";
+    confirmy.remove("hide");
+      setTimeout(function() {
+      confirmy.add("hide");
+      }, 1000);
+    currentindex++;
+    if (currentindex == 10) {
+      endquiz();
+    }
+    else {
+      loadquestions();
+    }
+  }
+  else {
+    time -= (secmult *3);
+    if (time < 0) {
+      time = 0;
+    }
+    countdown.textContent = time;
+
+    confirmy.textContent = "WRONG!"
+
+    confirmy.remove("hide");
+      setTimeout(function() {
+      confirmy.add("hide");
+      }, 1000);
+    currentindex++;
+    if (currentindex == 10) {
+      endquiz();
+    }
+    else {
+      loadquestions();
+    }
+  }
+}
+
+// function answerclick() {
+//   if (this.optionboxlabel != currentq.answer ) {
+//     time -= (secmult *3);
+
+//     if (time < 0) {
+//       time = 0;
+//     }
+//     countdown.textContent = time;
+
+//     confirmy.textContent = "WRONG!";
+//   }
+//   else {
+//     confirmy.textContent = "CORRECT!";
+//   }
+//   confirmy.remove("hide");
+//   setTimeout(function() {
+//     confirmy.add("hide");
+//   }, 1000);
+
+//   currentindex++;
+
+//   if (currentindex == 10) {
+//     endquiz();
+//   }
+//   else {
+//     loadquestions();
+//   }
+// }
+
+
 
 function clock() {
   // Updating countdown timer
