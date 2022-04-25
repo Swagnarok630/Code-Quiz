@@ -2,6 +2,8 @@
 
 A simple quiz where the user must answer a set of questions during an allotted time. The time remaining becomes the user's score, and the score is logged and retrieved from local storage.
 
+Code Quiz deployed [here](https://swagnarok630.github.io/Code_Quiz/)
+
 ## Criteria
 
 * We want to present the user with a start button to start the quiz
