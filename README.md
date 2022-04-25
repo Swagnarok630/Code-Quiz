@@ -20,6 +20,17 @@ A simple quiz where the user must answer a set of questions during an allotted t
 * A toggle for a dark/light theme to be applied to quiz
   * ![Gif of dark/light mode toggle](dltoggle.gif)
 * The quiz has multiple categories that the user may select before starting the quiz
+  * ![Gif of category selection](category.gif)
 * Dynamic high score list that can be viewed at any time during quiz
 * Some questions will show an image that appears dynamically
 * A message appears temporarily to notify the user if they answered correctly or incorrectly
+
+## Notes
+There were many more features that were meant to be added, however due to time constraints these features were removed. Most the code has been added to the unused.js file for future reference and possibly their eventual addition at a future time.
+### Future Features
+* Timer design to be per question instead of total time
+* Difficulty mode
+  * Each difficulty would change the amount of time given per question
+  * Score multiplier to award more points for harder difficulty
+* Larger pool of questions, so that each quiz is randomly generated and different each time
+  * Answers to be randomly sorted so that their options aren't the same each time
