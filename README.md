@@ -18,6 +18,7 @@ A simple quiz where the user must answer a set of questions during an allotted t
 ## Bonus Features
 
 * A toggle for a dark/light theme to be applied to quiz
+  * ![Gif of dark/light mode toggle](dltoggle.gif)
 * The quiz has multiple categories that the user may select before starting the quiz
 * Dynamic high score list that can be viewed at any time during quiz
 * Some questions will show an image that appears dynamically
