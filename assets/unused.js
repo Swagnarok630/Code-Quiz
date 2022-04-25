@@ -1,3 +1,22 @@
+// // Setting default difficulty
+// var spicelevel = "none";
+
+// var difficultybutton = document.querySelector("#difselect")
+// var difficultybutton = document.querySelector("#difselect").classList;
+
+// difficultybutton.remove("hide");
+
+// var secmult = 0;
+
+  // timemultiplier();
+  // var time = secmult * 5;
+
+    // if (category != "none") {
+  //   prepareset();
+  // }
+// difficultybutton.addEventListener("click",spiciness); Removed until I can solidify features
+// Removed && spicelevel and adjusted alert to remove difficulty
+
 //  IGNORE: removing feature until I can figure out the rest of this.
 // // Function for setting difficilty level
 // function spiciness() {
@@ -35,7 +54,11 @@
 //   startbutton.remove("hide");
 // }
 
-// IGNORE: Return to this feature at a later time when I can figure it out better
+// IGNORE: Most the code here was stuff I was trying to implement but couldn't get to work properly
+// Will return to these feature at a later time when I can figure it out better
+
+
+
 // // Function for determining total time per questions
 // function timemultiplier() {
 //   if (spicelevel == "easy") {

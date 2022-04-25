@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Quizacoatl!!!</title>
 </head>
+<!-- Had to look up how to run a function on page load up so that scores are shown every refresh -->
 <body onload="setscores()">
     <!-- Using a header to hold the items I want in the top row -->
     <!-- Had to give an ID to all my "containers" so that I could customize their light/dark settings -->
@@ -47,6 +48,7 @@
         </aside>
 
         <main>
+            <!-- This feature was removed last minute, as it wasn't functioning properly in many cases -->
             <div class="darkcont hide" id="diffbox">
                 <ul id="difficulty">
                     <li><button class="buttons" id="easy">Easy</button></li>

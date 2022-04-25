@@ -8,6 +8,7 @@ body {
     color: white;
 }
 
+/* To align and space corners and nav */
 header {
     display: flex;
     flex-direction: row;
@@ -16,7 +17,7 @@ header {
     margin: 0px 0px 80px 0px;
 }
 
-/* Flex column so that my toggle and score button are top and bottom */
+/* Flex column so that the toggle and score button are top and bottom */
 header #leftcorner {
     display: flex;
     flex-direction: column;
@@ -52,6 +53,7 @@ nav {
     width: 75%;
 }
 
+/* For adjusting list items */
 ul {
     display: flex;
     flex-direction: row;
@@ -61,6 +63,7 @@ ul {
     padding: 0px;
 }
 
+/* Styling category buttons */
 .buttons {
     background-color: rgb(186, 252, 186);
     border: solid 3px rgb(5, 105, 5);
@@ -75,6 +78,7 @@ ul {
     cursor: pointer;
 }
 
+/* Centering timer */
 header #rightcorner {
     width: 10%;
     text-align: center;
@@ -83,6 +87,7 @@ header #rightcorner {
     padding: 20px 0px 0px 0px;
 }
 
+/* To adjust left section (high score), middle section (cards), and right section (images) */
 section {
     display: flex;
     flex-direction: row;
@@ -91,16 +96,18 @@ section {
     justify-content: space-between;
 }
 
+/* Width set for high score section */
 section aside#left {
     width: 15%;
 }
 
+/* Width set for cards */
 section main {
     width: 60%;
 
 }
 
-/* Spacing out major content on page */
+/* Spacing out major content on page. Unused at this point, as this feature was removed */
 #difficulty {
     display: flex;
     flex-direction: row;
@@ -108,6 +115,7 @@ section main {
     padding: 0px;
 }
 
+/* Vertically spacing items in cards and confirmation window */
 #beginning {
     display: flex;
     flex-direction: column;
@@ -116,10 +124,12 @@ section main {
     align-items: center;
 }
 
+/* Unused at this point, as this feature was removed */
 #diffbox {
   margin: 20px 0px 20px 0px;
 }
 
+/* Styling the questions card */
 #questions {
   margin: 50px 0px 50px 0px;
   padding-bottom: 30px;
@@ -128,19 +138,23 @@ section main {
   align-items: left;
 }
 
+/* So that answers populate with a line break */
 .answer button {
   display: block;
 }
 
+/* Adjusted size to make initial title larger and in center */
 h1 {
     font-size: 40px;
     text-align: center;
 }
 
+/* Adjusted so questions are centered */
 h2 {
     text-align: center;
 }
 
+/* Sylized buttons for start, clear score, and restart */
 .start {
     background-color: rgb(128, 164, 255);
     border: none;
@@ -155,6 +169,7 @@ h2 {
     cursor: pointer;
 }
 
+/* Stylized buttons for answers */
 .option {
     background-color: rgb(244, 224, 98);
     color: black;
@@ -163,11 +178,13 @@ h2 {
     cursor: pointer;
 }
 
+/* Alignment of results screen */
 #results {
   font-size: 16px;
   text-align: center;
 }
 
+/* Adjusted for stylized text when user is right or wrong */
 #confirmy {
     margin: 50px 0px 20px 0px;
     text-align: center;
@@ -176,6 +193,7 @@ h2 {
     font-style: italic;
 }
 
+/* Adjusted section for images */
 section aside#right{
     width: 20%;
     height: 700px;
@@ -205,6 +223,7 @@ section aside#right{
     border: solid 3px rgb(46, 47, 67)
   }
 
+/* Class for hiding different elements */
   .hide {
     display: none;
 }

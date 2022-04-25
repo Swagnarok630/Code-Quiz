@@ -1,5 +1,6 @@
 // List of all questions used for quiz
 
+// Coding Questions
 var codeQs = [
     {
         question: "What does HTML stand for?",
@@ -103,6 +104,7 @@ var codeQs = [
     }
 ];
 
+// Marvel questions
 var marvelQs = [
     {
         question: "The original Avengers was founded by:",
@@ -206,6 +208,7 @@ var marvelQs = [
     }
 ];
 
+// King of Fighters questions
 var kofQs = [
     {
         question: "Which of the following is not a story arc in The King of Fighters?",
@@ -309,6 +312,7 @@ var kofQs = [
     }
 ];
 
+// Final Fantasy questions
 var ffQs = [
     {
         question: "What lovable creature is recurring in the series that you may ride around on?",
