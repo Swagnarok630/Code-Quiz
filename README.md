@@ -13,7 +13,7 @@ A simple quiz where the user must answer a set of questions during an allotted t
 * The quiz ends when the user has answered all questions or their timer reaches 0
 * When the quiz is over, the user may enter their initials and submit a score to be saved
 
-![Image of quiz in action]
+![Image of quiz in action](code_quiz_01.png)
 
 ## Bonus Features
 
