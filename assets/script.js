@@ -136,7 +136,7 @@ function theme() {
 
 
 // Variables for time
-var time = 150;
+var time = 100;
 // var secmult = 0;
 var countdown = document.getElementById("timer");
 var timer;
