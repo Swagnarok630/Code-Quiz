@@ -69,6 +69,7 @@ scorebutton.addEventListener("click", function() {
 
 clearbutton.addEventListener("click", function() {
   localStorage.removeItem("scores");
+  setscores();
 })
 
 // Starting the quiz
@@ -135,7 +136,7 @@ function theme() {
 
 
 // Variables for time
-var time = 100;
+var time = 150;
 // var secmult = 0;
 var countdown = document.getElementById("timer");
 var timer;
@@ -301,6 +302,7 @@ function loadq() {
 
 var confirmation = document.getElementById("validation")
 
+// Function to handle validations of answers, but per category to match loaded questions
 function codeanswerclick() {
   if (this.value != codeQs[currentindex].answer) {
     time -= 10;
@@ -474,13 +476,15 @@ function clock() {
 
 var submitscorebutton = document.getElementById("submitscore")
 var initials = document.getElementById("initials");
-
+var highscorelist = document.getElementById("highscores");
 
 submitscorebutton.addEventListener("click", function () {
+  
   // Receiving user's input and removing space from beginning and end
   var init = initials.value.trim();
 
   if (init != "") {
+    highscorelist.innerHTML = "";
     var scores = JSON.parse(window.localStorage.getItem("scores")) || [];
 
     var newscore = {
@@ -492,24 +496,26 @@ submitscorebutton.addEventListener("click", function () {
     window.localStorage.setItem("scores", JSON.stringify(scores));
   }
 
-  setscores();
+  setscores();  // prolly need to remove this and do a singular update for this to work correctly
 
   var submission = document.querySelector("#submission").classList
   submission.add("hide")
 });
 
+
+
 function setscores() {
+  highscorelist.innerHTML = "";
   var scores = JSON.parse(window.localStorage.getItem("scores")) || [];
 
   scores.sort(function(a, b) {
     return b.score - a.score;
   });
-
   scores.forEach(function(score) {
       var scoreitem = document.createElement("li");
       scoreitem.textContent = score.initials + " -- " + score.score;
 
-      var highscorelist = document.getElementById("highscores");
+      
       highscorelist.appendChild(scoreitem);
   });
 }
